@@ -1,0 +1,50 @@
+#build a python program to calculate electricity bill based on the following criteria:
+#read all the required data like PU,CU,and type of customer
+#calculate bill amount based on the number of units consumed type of customer and other charges
+#finally print the value of EC,FC,CC,ED as per expected output
+def calculate_electricity_bill(previous_reading, current_reading, customer_type):
+    # Define rates and charges
+    rates = {
+        'residential': 0.12,  # per unit
+        'commercial': 0.15,   # per unit
+        'industrial': 0.10     # per unit
+    }
+    fixed_charges = {
+        'residential': 5.00,
+        'commercial': 10.00,
+        'industrial': 20.00
+    }
+    cess_rate = 0.02  # 2% cess on energy charge
+
+    # Calculate units consumed
+    units_consumed = current_reading - previous_reading
+
+    # Get rate and fixed charge based on customer type
+    if customer_type not in rates:
+        raise ValueError("Invalid customer type. Choose from 'residential', 'commercial', or 'industrial'.")
+
+    rate_per_unit = rates[customer_type]
+    fixed_charge = fixed_charges[customer_type]
+
+    # Calculate energy charge
+    energy_charge = units_consumed * rate_per_unit
+
+    # Calculate cess
+    cess = energy_charge * cess_rate
+
+    # Total bill amount
+    total_bill = energy_charge + fixed_charge + cess
+
+    # Print the breakdown
+    print(f'Energy Charge (EC): ${energy_charge:.2f}')
+    print(f'Fixed Charge (FC): ${fixed_charge:.2f}')
+    print(f'Cess (CC): ${cess:.2f}')
+    print(f'Total Bill Amount: ${total_bill:.2f}')
+
+    return total_bill
+# Example usage
+previous_reading = 1500
+current_reading = 1650
+customer_type = 'residential'
+calculate_electricity_bill(previous_reading, current_reading, customer_type)
+
