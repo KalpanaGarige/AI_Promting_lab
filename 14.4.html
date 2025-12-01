@@ -1,0 +1,116 @@
+<!-- 
+Add JavaScript interactivity to this page.
+Requirements:
+1. Create a simple login form with username and password fields.
+2. Validate the form using JavaScript.
+3. If any field is empty, show clear error messages below the input.
+4. If both fields are filled, show a "Login successful" message.
+5. Prevent form submission if errors exist.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login | Student Info Portal</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: #f4f4f4;
+        margin: 0;
+    }
+
+    .login-box {
+        max-width: 350px;
+        margin: 3rem auto;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .error {
+        color: red;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+
+    .success {
+        color: green;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.7rem;
+        margin-top: 1rem;
+        border: none;
+        background: #2f6fbf;
+        color: white;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2 style="text-align:center;">Login</h2>
+
+    <form id="loginForm">
+        <label>Username:</label><br>
+        <input type="text" id="username" style="width:100%;padding:0.5rem;"><br>
+        <div id="userError" class="error"></div>
+
+        <label>Password:</label><br>
+        <input type="password" id="password" style="width:100%;padding:0.5rem;"><br>
+        <div id="passError" class="error"></div>
+
+        <button type="submit">Login</button>
+
+        <div id="successMsg" class="success"></div>
+    </form>
+</div>
+
+<!-- ==========================
+      JAVASCRIPT VALIDATION
+   ========================== -->
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event){
+        event.preventDefault();  // prevent refresh
+
+        let username = document.getElementById("username").value.trim();
+        let password = document.getElementById("password").value.trim();
+
+        let userError = document.getElementById("userError");
+        let passError = document.getElementById("passError");
+        let successMsg = document.getElementById("successMsg");
+
+        // clear previous messages
+        userError.textContent = "";
+        passError.textContent = "";
+        successMsg.textContent = "";
+
+        let hasError = false;
+
+        if (username === "") {
+            userError.textContent = "Username cannot be empty";
+            hasError = true;
+        }
+
+        if (password === "") {
+            passError.textContent = "Password cannot be empty";
+            hasError = true;
+        }
+
+        if (!hasError) {
+            successMsg.textContent = "Login successful!";
+        }
+    });
+</script>
+
+</body>
+</html>
