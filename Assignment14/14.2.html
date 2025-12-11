@@ -1,0 +1,106 @@
+<!-- 
+Add CSS styling to the Student Info Portal homepage.
+Requirements:
+1. Responsive navigation bar.
+2. Centered content section with a white card.
+3. Footer with light gray background.
+4. Use internal CSS inside <style>.
+5. Keep the design simple and clean.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info Portal</title>
+
+    <!-- CSS Styling for Task #2 -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(90deg, #2f6fbf, #4aa3ff);
+            color: white;
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #2f6fbf;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Centered Content */
+        .content {
+            max-width: 750px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Section */
+        footer {
+            background: #e6e6e6;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            color: #333;
+        }
+
+        /* Responsive Navigation */
+        @media (max-width: 600px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        Student Info Portal
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Students</a>
+        <a href="#">Courses</a>
+        <a href="#">About</a>
+    </nav>
+
+    <!-- Centered Page Content -->
+    <div class="content">
+        <h2>Welcome!</h2>
+        <p>This portal provides information about students, courses, and more.</p>
+    </div>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Info Portal</title>
+
+<!-- ==========================
+       CSS STYLING
+   ========================== -->
+<style>
+    /* Basic reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+    }
+
+    /* Header */
+    header {
+        background: linear-gradient(90deg, #2f6fbf, #4aa3ff);
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #2f6fbf;
+        padding: 0.7rem;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 1rem;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Main content card */
+    .content {
+        max-width: 750px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+        background: #e6e6e6;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+        color: #333;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        nav {
+            flex-direction: column;
+        }
+        nav a {
+            margin: 0.5rem 0;
+        }
+    }
+
+    /* Search form input/button */
+    .search-box {
+        margin-top: 1.5rem;
+    }
+
+    .search-box input {
+        padding: 0.6rem;
+        width: 65%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .search-box button {
+        padding: 0.65rem 1rem;
+        margin-left: 0.5rem;
+        border: none;
+        background: #2f6fbf;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .search-box button:hover {
+        background: #1c4d8c;
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- ==========================
+       HEADER
+   ========================== -->
+<header>
+    <h1>Student Info Portal</h1>
+</header>
+
+<!-- ==========================
+       NAVIGATION MENU
+   ========================== -->
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Students</a>
+    <a href="#">Courses</a>
+    <a href="#">About</a>
+</nav>
+
+<!-- ==========================
+        MAIN CONTENT
+   ========================== -->
+<div class="content">
+    <h2>Welcome!</h2>
+    <p>Use this portal to view student details, course information, and more.</p>
+
+    <!-- SEARCH STUDENT SECTION -->
+    <div class="search-box">

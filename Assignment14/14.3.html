@@ -1,0 +1,120 @@
+<!-- 
+TASK #3 PROMPT (for Copilot)
+
+Create a simple login form with username and password fields.
+Add JavaScript validation so that:
+
+1. If username OR password is empty → display clear error messages.
+2. If both fields are filled → show a “Login successful” message.
+3. Do not submit the form if validation fails.
+4. Show error messages below each input field.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 2rem;
+        }
+
+        .login-box {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .success {
+            color: green;
+            font-size: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        button {
+            background: #2f6fbf;
+            color: white;
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+        <label>Username:</label>
+        <input type="text" id="username" style="width: 100%; padding: 0.5rem;">
+        <div id="userError" class="error"></div>
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" style="width: 100%; padding: 0.5rem;">
+        <div id="passError" class="error"></div>
+
+        <button type="submit">Login</button>
+
+        <div id="successMessage" class="success"></div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault(); // stop form submit
+
+        // Clear old messages
+        document.getElementById("userError").textContent = "";
+        document.getElementById("passError").textContent = "";
+        document.getElementById("successMessage").textContent = "";
+
+        // Get values
+        let user = document.getElementById("username").value.trim();
+        let pass = document.getElementById("password").value.trim();
+
+        let valid = true;
+
+        // Username validation
+        if (user === "") {
+            document.getElementById("userError").textContent = "Username cannot be empty.";
+            valid = false;
+        }
+
+        // Password validation
+        if (pass === "") {
+            document.getElementById("passError").textContent = "Password cannot be empty.";
+            valid = false;
+        }
+
+        // If both fields are valid → success
+        if (valid) {
+            document.getElementById("successMessage").textContent = "Login Successful!";
+        }
+    });
+</script>
+
+</body>
+</html>
